@@ -1,0 +1,119 @@
+
+#bookmarks {
+background: #f4f5f7;
+-moz-border-radius-topright: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-bottomright: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-webkit-border-top-left-radius: 5px;
+-moz-border-radius-bottomleft: 5px;
+-webkit-border-bottom-left-radius: 5px;
+width: 300px;
+max-height: 300px;
+overflow: scroll; 
+}
+
+#searchBkm {
+margin-top: 8px;
+margin-bottom: 8px;
+}
+
+#searchbookmarks {
+margin-top: 5px;
+margin-bottom: 12px;	
+}
+
+#paneltrigger:focus {
+outline: none;
+}
+
+.panel {
+position: fixed;
+top: 140px;
+right: 0;
+display: none;
+background: #adadad;
+border:1px solid #adadad;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 0px;
+-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+-webkit-border-top-left-radius: 20px;
+-moz-border-radius-bottomleft: 20px;
+-webkit-border-bottom-left-radius: 20px;
+width: 350px;
+height: auto;
+padding: 30px 130px 30px 30px;
+filter: alpha(opacity=85);
+opacity: .85;
+}
+
+.panel p{
+margin: 0 0 15px 0;
+padding: 0;
+color: #000000;
+}
+
+.panel #paneltrigger, .panel #paneltrigger:visited{
+margin: 0;
+padding: 0;
+color: #9FC54E;
+text-decoration: none;
+border-bottom: 1px solid #9FC54E;
+}
+
+.panel #paneltrigger:hover, .panel #paneltrigger:visited:hover{
+margin: 0;
+padding: 0;
+color: #ffffff;
+text-decoration: none;
+border-bottom: 1px solid #ffffff;
+}
+
+#paneltrigger.trigger{
+position: fixed;
+text-decoration: none;
+top: 180px; right: 0;
+font-size: 16px;
+letter-spacing:-1px;
+font-family: verdana, helvetica, arial, sans-serif;
+color:#333333;
+padding: 20px 5px 20px 15px;
+font-weight: 700;
+background:#969494;
+border:1px solid #969494;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 0px;
+-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+-webkit-border-top-left-radius: 20px;
+-moz-border-radius-bottomleft: 20px;
+-webkit-border-bottom-left-radius: 20px;
+display: block;
+}
+
+#paneltrigger.trigger:hover{
+position: fixed;
+text-decoration: none;
+top: 180px; right: 0;
+font-size: 16px;
+letter-spacing:-1px;
+font-family: verdana, helvetica, arial, sans-serif;
+color:#333333;
+padding: 20px 10px 20px 20px;
+font-weight: 700;
+background:#969494;
+border:1px solid #969494;
+-moz-border-radius-topright: 20px;
+-webkit-border-top-right-radius: 0px;
+-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+-webkit-border-top-left-radius: 20px;
+-moz-border-radius-bottomleft: 20px;
+-webkit-border-bottom-left-radius: 20px;
+display: block;
+}
+
+#paneltrigger.active.trigger {
+background:#969494;
+}
