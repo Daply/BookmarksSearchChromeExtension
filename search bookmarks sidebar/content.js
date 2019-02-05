@@ -1,7 +1,9 @@
 
 
 // get query from main google input
-let queryTextSearch = document.getElementsByName('q')[0].value;
+let queryTextSearch = '';
+if (document.getElementsByName('q') != null) 
+    queryTextSearch = document.getElementsByName('q')[0].value;
 
 // get all bookmarks
 let bookmarkTreeNodes;
@@ -15,6 +17,7 @@ window.onload = function() {
 	//console.dir(document.body); 
 	
 	var g = document.getElementById("main");
+	//var g = document.getElementById("cnt");
 
 	// create panel
     var panelElem = document.createElement("div");
@@ -126,7 +129,7 @@ function createTableBookmarks(bookmarks) {
 		for (var i = 0; i < bookmarks.length; i++) {
 			resultText += "<tr><td><div class='bookmarkstyle'>" +
             "<img height='16' width='16' src='" +
-			"http://www.google.com/s2/favicons?domain=" +
+			"https://www.google.com/s2/favicons?domain=" +
             bookmarks[i].url +
             "'>" +			
 			"<a href='" +
@@ -164,7 +167,7 @@ function searchInBookmarks(bookmarks, queryWords) {
 	
 	// sort matched bookmarks by percentage
 	if (listOfBookmarksWithPercents.length > 0) {
-		listOfBookmarksWithPercents.sort(function(a, b){return a.percentage - b.percentage});
+		listOfBookmarksWithPercents.sort(function(a, b){return b.percentage - a.percentage});
 		for (i = 0; i < listOfBookmarksWithPercents.length; i++) {
 			listOfBookmarks.push(listOfBookmarksWithPercents[i].bookmark);
 		}
