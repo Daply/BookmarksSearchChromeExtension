@@ -2,43 +2,21 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
     <style>
-	html {
-		font-family: "Open Sans",Arial,"Lucida Grande",sans-serif;
-    }
-	body {
-	  min-width: 200px; /* your desired width */
-	  max-width: 100%;
-	  position: relative;
-	  vertical-align:middle;
-	}
-	.divide {
-		line-height: 1.3em;
-	}
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
-      }
-	  #list {
-		box-shadow: var(--cr-card-elevation_-_box-shadow);
-		background-color: #fff;
-		border-radius: var(--cr-card-border-radius);
-		margin: 0 auto;
-		max-width: var(--card-max-width);
-		padding: 8px 0;
-		}
     </style>
   </head>
   <body>
-    <p class="divide">Searching bookmarks</p>
-	  <div>Search Bookmarks: <input id="search"></div>
-	    <p>Bookmark that match search query</p>
-		<div id="bookmarks"></div>
-		<div id="editdialog"></div>
-		<div id="deletedialog"></div>
-		<div id="adddialog"></div>
-    <button id="changeColor"></button>
+    <div class="bookmarkSearchField">
+		<p class="divide">Search bookmarks</p>
+		<div>
+			<input id="search">
+		</div>
+		<div class="table" id="bookmarks">
+		</div>
+		<button class="btn btn-info" id="searchBkm">search</button>
+	</div>
 	<script src="/scripts/jquery.min.js" type="text/javascript"></script>
 	<script src="popup.js"></script>
   </body>

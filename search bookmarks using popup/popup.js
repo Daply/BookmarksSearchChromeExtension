@@ -1,63 +1,69 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 
-'use strict';
-
-let changeColor = document.getElementById('changeColor');
-
-chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-});
-
-
-changeColor.onclick = function(element) {
-	
-	  let color = element.target.value;
-	  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-		chrome.tabs.executeScript(
-			tabs[0].id,
-			{code: 'document.body.style.backgroundColor = "' + color + '";'});
+let searchBkm = document.getElementById('searchBkm');
+if (searchBkm != null) {
+	searchBkm.onclick = function(element) {
 		
-		// extracting data about googling from url (parameter 'g')
-		var activeTab = tabs[0];
-		var tabUrl = activeTab.url;		
-		
-		var queryIndex = tabUrl.indexOf('q=');
-		var queryLastIndex = tabUrl.indexOf('&', queryIndex);
-		var queryFind = tabUrl.substring(queryIndex, queryLastIndex);
-		queryFind = queryFind.replace(/q=/i, "");
-		var queryWords = queryFind.split("+");
-		
-		// search bookmark that are somehow similar to query
-	    // and sort them by percentage similarity
-		chrome.bookmarks.getTree(
-		    function(bookmarkTreeNodes) {
-			var foundBookmarksList = getResult(bookmarkTreeNodes, queryFind);
-			$('#bookmarks').html(foundBookmarksList);
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+
+		// data from input
+		var queryFind = document.getElementById("search").value;
+			// search bookmark that are somehow similar to query
+			// and sort them by percentage similarity
+			chrome.bookmarks.getTree(
+				function(bookmarkTreeNodes) {
+				var foundBookmarksList = getResult(bookmarkTreeNodes, queryFind);
+				$('#bookmarks').html(foundBookmarksList);
+			});
+			
 		});
-		
-	  });
-};
+	};
+}
 
 function getResult(bookmarks, query) {
 	var queryWords = query.split("+");
 	var resultListOfBookmarks = searchInBookmarks(bookmarks, queryWords);
+	//var resultText = createListOfBookmarks(resultListOfBookmarks);
+	var resultText = createTableBookmarks(resultListOfBookmarks);
+	return resultText;
+}
+
+function createListOfBookmarks(bookmarks) {
 	var resultText;
-	if (resultListOfBookmarks.length > 0) {
-		var i;
+	if (bookmarks.length > 0) {
 		resultText = "<ul>";
-		for (i = 0; i < resultListOfBookmarks.length; i++) {
-			//alert(resultListOfBookmarks[i].title);
-			resultText += "<li>" + resultListOfBookmarks[i].title + "</li>";
+		for (var i = 0; i < bookmarks.length; i++) {
+			resultText += "<li>" + bookmarks[i].title + "</li>";
 		}
 		resultText += "</ul>";
 	}
 	else {
-		resultText = "No bookmarks found";
+		resultText = "<p>No bookmarks found</p>";
 	}
-	//alert(resultText);
+	return resultText;
+}
+
+function createTableBookmarks(bookmarks) {
+	var resultText;
+	if (bookmarks.length > 0) {
+		resultText = "<table><tbody>";
+		for (var i = 0; i < bookmarks.length; i++) {
+			resultText += "<tr><td><div class='bookmarkstyle'>" +
+            "<img height='16' width='16' src='" +
+			"https://www.google.com/s2/favicons?domain=" +
+            bookmarks[i].url +
+            "'>" +			
+			"<a href='" +
+			bookmarks[i].url +
+			"'>" +
+			bookmarks[i].title + 
+			"</a>" +
+			"</div></td></tr>";
+		}
+		resultText += "</tbody></table>";
+	}
+	else {
+		resultText = "<p>No bookmarks found</p>";
+	}
 	return resultText;
 }
 
@@ -80,7 +86,7 @@ function searchInBookmarks(bookmarks, queryWords) {
 	
 	// sort matched bookmarks by percentage
 	if (listOfBookmarksWithPercents.length > 0) {
-		listOfBookmarksWithPercents.sort(function(a, b){return a.percentage - b.percentage});
+		listOfBookmarksWithPercents.sort(function(a, b){return b.percentage - a.percentage});
 		for (i = 0; i < listOfBookmarksWithPercents.length; i++) {
 			listOfBookmarks.push(listOfBookmarksWithPercents[i].bookmark);
 			//alert(listOfBookmarksWithPercents[i].percentage);

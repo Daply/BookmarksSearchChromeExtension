@@ -1,0 +1,33 @@
+html {
+	font-family: "Lucida Grande";
+}
+body {
+	min-width: 200px; /* your desired width */
+	max-width: 100%;
+	position: relative;
+	vertical-align:middle;
+}
+.divide {
+	line-height: 1.3em;
+}
+#searchBkm {
+    height: 30px;
+    width: 80px;
+    text-align: center;
+	text-decoration: none;
+    display: inline-block;
+	border: none;
+	padding: 2px 5px 5px 5px;
+}
+#bookmarks {
+	box-shadow: var(--cr-card-elevation_-_box-shadow);
+	background-color: #fff;
+	border-radius: var(--cr-card-border-radius);
+	margin: 0 auto;
+	max-width: var(--card-max-width);
+	padding: 8px 0;
+}
+
+.bookmarkSearchField {
+	margin: 10px;
+}
