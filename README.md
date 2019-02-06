@@ -10,3 +10,8 @@ First extension is performed as sidebar, there are two types of search:
 2) it is possible to input query in sidebar
 
 ![alt text](https://github.com/Daply/Chrome-extension/blob/master/search%20bookmarks%20sidebar/example2.jpg)
+
+
+The second extension is search bookmarks, but from popup interface and only using custom input (not google)
+
+
