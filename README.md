@@ -1,4 +1,4 @@
-# Chrome-extension
+# Bookmarks search chrome extension
 Chrome extension on searching bookmarks, works only on https://www.google.com page
 
 First extension is performed as sidebar, there are two types of search:
