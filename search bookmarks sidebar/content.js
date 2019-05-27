@@ -185,20 +185,21 @@ function percentOfAppropriateQuery(bookmark, queryWords) {
     var matchingWordsInSequence = [];
     var matchingParts = [];
 	var i = 0;
-    for (i = 0; i < queryWords.length; i++) {     
-         if (bookmarkTitle.search(queryWords[i]) != -1) {
-             matchingFullWords.push(queryWords[i]);
+    for (i = 0; i < queryWords.length; i++) {  
+         var queryWord = queryWords[i].toLowerCase();
+         if (bookmarkTitle.search(queryWord) != -1) {
+             matchingFullWords.push(queryWord);
          }
-         findIndexOfQuerySequence = bookmarkTitle.indexOf(queryWords[i], bookmarkTitleIndex);
+         findIndexOfQuerySequence = bookmarkTitle.indexOf(queryWord, bookmarkTitleIndex);
          if (findIndexOfQuerySequence != -1) {
-             bookmarkTitleIndex = findIndexOfQuerySequence + queryWords[i].length;
-             matchingWordsInSequence.push(queryWords[i]);
+             bookmarkTitleIndex = findIndexOfQuerySequence + queryWord.length;
+             matchingWordsInSequence.push(queryWord);
          }
          else {
              // check matching parts of word
-             var middleIndex = queryWords[i].length/2;
-             var firstPartOfWord = queryWords[i].substring(0, middleIndex);
-             var secondPartOfWord = queryWords[i].substring(middleIndex, queryWords[i].length);
+             var middleIndex = queryWord.length/2;
+             var firstPartOfWord = queryWord.substring(0, middleIndex);
+             var secondPartOfWord = queryWord.substring(middleIndex, queryWord.length);
              var firstFindIndex = bookmarkTitle.indexOf(firstPartOfWord, bookmarkTitleIndex);
              var secondFindIndex = bookmarkTitle.indexOf(secondPartOfWord, bookmarkTitleIndex);
                 
