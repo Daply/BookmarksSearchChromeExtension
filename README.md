@@ -1,22 +1,12 @@
 # Bookmarks search chrome extension
 Chrome extension on searching bookmarks, works only on https://www.google.com page
 
-First extension is performed as sidebar, there are two types of search:
+First extension is performed as sidebar, there are two types of search, it takes a query from google input and searches within existing bookmarks or it is possible to input query in sidebar
 
-1) it takes a query from google input and searches within existing bokmarks
+![alt text](https://github.com/Daply/BookmarksSearchChromeExtension/blob/master/search%20bookmarks%20sidebar/bookmarksSearchPanel.png)
 
-![alt text](https://github.com/Daply/Chrome-extension/blob/master/search%20bookmarks%20sidebar/example1.jpg)
+The second extension is search bookmarks from popup interface and only using custom input (not google input)
 
-2) it is possible to input query in sidebar
-
-![alt text](https://github.com/Daply/Chrome-extension/blob/master/search%20bookmarks%20sidebar/example2.jpg)
-
-
-The second extension is search bookmarks, but from popup interface and only using custom input (not google)
-
-![alt text](https://github.com/Daply/Chrome-extension/blob/master/search%20bookmarks%20using%20popup/example1.png)
-
-
-![alt text](https://github.com/Daply/Chrome-extension/blob/master/search%20bookmarks%20using%20popup/example2.png)
+![alt text](https://github.com/Daply/BookmarksSearchChromeExtension/blob/master/search%20bookmarks%20using%20popup/bookmarksSearchPopup.png)
 
 
