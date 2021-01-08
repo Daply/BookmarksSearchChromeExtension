@@ -13,10 +13,10 @@
 	"matches": ["https://www.google.com/*"]
   }],
   "icons": {
-    "16": "images/bkm_search16.png",
-    "32": "images/bkm_search32.png",
-    "48": "images/bkm_search48.png",
-    "128": "images/bkm_search128.png"
+    "16": "images/bookmarks_search16.png",
+    "32": "images/bookmarks_search32.png",
+    "48": "images/bookmarks_search48.png",
+    "128": "images/bookmarks_search128.png"
   },
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
