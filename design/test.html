@@ -1,0 +1,175 @@
+<html>
+
+	<head>
+		<title>Sidebar panel</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+	
+	<script>
+		$(document).ready(function(){
+		$(".trigger").click(function(){
+			$(".panel").toggle("fast");
+			$(this).toggleClass("active");
+			//$("#bookmarks").empty();
+			//$("#bookmarks").append(getFoundBookmarksFromSearchQuery());
+			return false;
+		});
+		$("#searchbookmarks").click(function(){
+			//$("#bookmarks").empty();
+			//$("#bookmarks").append(getFoundBookmarksFromInput());
+			return false;
+		});
+	});	
+	</script>
+
+    <div class="main">
+
+		<div class="panel">
+		    <div class="theme">
+			    <div id="day">
+					<p>Day</p>
+				</div>
+				<div id="theme-switch">
+					<label class="switch">
+						<input type="checkbox">
+						<span class="slider round"></span>
+					</label>
+				</div>
+				<div id="night">
+					<p>Night</p>
+				</div>
+			</div>
+			<div class="search">
+			    <div class="search-input">
+					<input id="search-bkm" class="form-control" placeholder="Bookmarks"/>
+				</div>
+				<div class="search-button">
+					<button id="search-bookmarks" class="btn btn-info" type="button" onclick="getFoundBookmarksFromInput()">search</button>
+				</div>
+			</div>
+			<div id="bookmarks">
+			    <ul class="bookmarks-list">
+                    <li>
+                        <div class="bookmark-item offset-40">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 1</a>
+						</div>
+                    </li>
+                    <li>
+                        <div class="bookmark-item offset-40">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 2</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item-folder offset-40">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <p class="bookmark-title-folder">Folder</p>
+						</div>
+                    </li>
+                    <li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 3</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 4</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 5</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 6</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 7</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 8</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 9</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 10</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 11</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 12</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 13</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 14</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 15</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 16</a>
+						</div>
+                    </li>
+					<li>
+                        <div class="bookmark-item offset-20">
+						    <img class="bookmark-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPUlEQVQ4T+2SsU4CQRRFz7BEYzQYSTRaCYlGCxNXgw0U2/sDFhAbC+Mf2LFUVv6BlWGNpX7CFhAbYUuNJmAlNJoQKSS7jFkCJMOOxA9wyvvunDfvvhE1kGjOnlTluhA6G+IfoGawXi6TzOe1YY3ED8fhrVAYe5QQjUSCLc9jNp3WQr4bDZ5Nk6DT0QNCdT6bZdN1EfG4ApG+z4tl0a1WFV27xtVikTXbVozvtk2rVIq8LAT0AeWXCMNgw3VZyOUGF74qFV4tCxkEkwAZAtrAymRlJpVi2/MG8pNp0ms2I90ltMQj3Ao40qW2NNzIp+P8tplrUYcDCQ9AbOr+osWeD/uD2WtwDlz8FSCgH8BpBq7G4dXgBLgEFqeBwrklnGXgLvQp6VchOQfHEg6BHWB5CGtL8GJwH4ObXeiOmvwALpRwKiW44vEAAAAASUVORK5CYII=" alt="bkmrk" />
+						    <a class="bookmark-title" href="#">Bookmark 17</a>
+						</div>
+                    </li>
+                </ul>
+			</div>
+		</div>
+	    
+	</div>
+	
+	<a id="panel-trigger" class="trigger" href="#"></a>
+
+	</body>
+
+
+</html>
